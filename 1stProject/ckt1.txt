@@ -3,7 +3,7 @@
 entity ELEMENT1 is 
     port(A, B, C, D: in bit;
          S1,S2: out bit);
-end ELEMENT1
+end ELEMENT1;
 
 architecture CKT1 of ELEMENT1 is
     signal VAR1: bit;
@@ -11,12 +11,10 @@ architecture CKT1 of ELEMENT1 is
     signal VAR3: bit;
     signal VAR4: bit;
     begin
-        VAR1 <= A AND B
-        VAR2 <= NOT(B XOR C)
-        VAR3 <= A AND VAR2
-        VAR4 <= D OR VAR2
-        S1 <= VAR1 XOR VAR3
-        S2 <= VAR3 OR VAR4
-end CKT1
- 
-
+        VAR1 <= A OR B;
+        VAR2 <= NOT(B XOR C);
+        VAR3 <= A AND VAR2;
+        VAR4 <= D OR VAR2;
+        S1 <= VAR1 XOR VAR3;
+        S2 <= VAR3 OR VAR4;
+end CKT1;
