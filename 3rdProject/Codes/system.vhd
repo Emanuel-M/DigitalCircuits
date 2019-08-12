@@ -28,18 +28,18 @@ begin
                          SW(5) => input_vector(5),
                          SW(6) => input_vector(6),
                          SW(7) => input_vector(7),
-                         aux_vector(11) => bcd(11),
-                         aux_vector(10) => bcd(10),
-                         aux_vector(9) => bcd(9),
-                         aux_vector(8) => bcd(8),
-                         aux_vector(7) => bcd(7),
-                         aux_vector(6) => bcd(6),
-                         aux_vector(5) => bcd(5),
-                         aux_vector(4) => bcd(4),
-                         aux_vector(3) => bcd(3),
-                         aux_vector(2) => bcd(2),
-                         aux_vector(1) => bcd(1),
-                         aux_vector(0) => bcd(0));
+                         bcd(11) => aux_vector(11),
+                         bcd(10) => aux_vector(10),
+                         bcd(9) => aux_vector(9),
+                         bcd(8) => aux_vector(8),
+                         bcd(7) => aux_vector(7),
+                         bcd(6) => aux_vector(6),
+                         bcd(5) => aux_vector(5),
+                         bcd(4) => aux_vector(4),
+                         bcd(3) => aux_vector(3),
+                         bcd(2) => aux_vector(2),
+                         bcd(1) => aux_vector(1),
+                         bcd(0) => aux_vector(0));
                          
   hex_2: display_controller port map( S(3) => aux_vector(11),
                                       S(2) => aux_vector(10),
@@ -56,4 +56,4 @@ begin
                                       S(1) => aux_vector(1),
                                       S(0) => aux_vector(0));
                                       
-end system;     
+end system_architecture;     
