@@ -2,7 +2,9 @@
 
 entity system is
   port( input_vector : in bit_vector(7 downto 0);
-        output_vector: out bit_vector(0 to 11));
+        HEX0: out bit_vector(3 downto 0);
+        HEX1: out bit_vector(3 downto 0);
+        HEX2: out bit_vector(3 downto 0));
 end system;
 
 architecture system_architecture of system is
@@ -40,20 +42,20 @@ begin
                          bcd(2) => aux_vector(9),
                          bcd(1) => aux_vector(10),
                          bcd(0) => aux_vector(11));
-                         
-  hex_2: display_controller port map( S(3) => aux_vector(11),
-                                      S(2) => aux_vector(10),
-                                      S(1) => aux_vector(9),
-                                      S(0) => aux_vector(8));
-                                      
-  hex_1: display_controller port map( S(3) => aux_vector(7),
-                                      S(2) => aux_vector(6),
-                                      S(1) => aux_vector(5),
-                                      S(0) => aux_vector(4));
-                                      
-  hex_0: display_controller port map( S(3) => aux_vector(3),
-                                      S(2) => aux_vector(2),
-                                      S(1) => aux_vector(1),
-                                      S(0) => aux_vector(0));
-                                      
-end system_architecture;     
+                      
+  HEX2(3) <= aux_vector(0);
+  HEX2(2) <= aux_vector(1);
+  HEX2(1) <= aux_vector(2);
+  HEX2(0) <= aux_vector(3);
+  
+  HEX1(3) <= aux_vector(4);
+  HEX1(2) <= aux_vector(5);
+  HEX1(1) <= aux_vector(6);
+  HEX1(0) <= aux_vector(7);
+  
+  HEX0(3) <= aux_vector(8);
+  HEX0(2) <= aux_vector(9);
+  HEX0(1) <= aux_vector(10);
+  HEX0(0) <= aux_vector(11);
+                                 
+end system_architecture;    
