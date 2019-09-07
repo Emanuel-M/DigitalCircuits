@@ -10,4 +10,4 @@ force input_number(2) 0 0, 1 40 -repeat 80
 force input_number(1) 0 0, 1 20 -repeat 40 
 force input_number(0) 0 0, 1 10 -repeat 20  
 
-run 650
+run 1290
