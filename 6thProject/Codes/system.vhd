@@ -1,9 +1,9 @@
 -- Comunication System
 -- for more info, go to: github.com/mtxslv/DigitalCircuits
--- Please, make sure the files X.vhd and Y.vhd are in the project directory.
+-- Please, make sure the files X.vhd and Ynewtriala.vhd are in the project directory.
 
 entity system is
-  port( CLK, K: bit;
+  port( CLK, K, global_load: bit;
         global_A: in bit_vector(3 downto 0);
         global_Z: out bit_vector(3 downto 0));
 end system;
@@ -20,7 +20,7 @@ end component;
 -- sender module
 component Y is
   port( A: in bit_vector(3 downto 0);
-        clock, clear: in bit;
+        clock, clear, load: in bit;
         q_output: out bit);
 end component;     
 
@@ -33,6 +33,7 @@ begin
   
   lbl_sender: Y port map(clock => CLK,
                          clear => K,
+			 load => global_load,
                          A(3) => global_A(3),
                          A(2) => global_A(2),
                          A(1) => global_A(1),
