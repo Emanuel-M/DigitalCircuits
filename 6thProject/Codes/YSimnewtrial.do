@@ -9,6 +9,6 @@ force A(0) 0 0, 1 10 -repeat 20
 
 force load 1 0,  0 1 -repeat 10
 force clear 0 0, 1 80 -repeat 160
-force clock 0 0, 1 80
+force clock 1 0, 0 1 -repeat 2 
 
 run 160
