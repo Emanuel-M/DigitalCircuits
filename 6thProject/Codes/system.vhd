@@ -3,7 +3,8 @@
 -- Please, make sure the files X.vhd and Ynewtriala.vhd are in the project directory.
 
 entity system is
-  port( CLK, K, global_load: bit;
+  port( CLK, global_load: bit;
+        K: bit_vector(1 downto 0);
         global_A: in bit_vector(3 downto 0);
         global_Z: out bit_vector(3 downto 0));
 end system;
@@ -32,15 +33,15 @@ signal Z_aux: bit_vector(3 downto 0);
 begin
   
   lbl_sender: Y port map(clock => CLK,
-                         clear => K,
-			 load => global_load,
+                         clear => K(0),
+			                   load => global_load,
                          A(3) => global_A(3),
                          A(2) => global_A(2),
                          A(1) => global_A(1),
                          A(0) => global_A(0),
                          q_output => q_aux);
   lbl_receiver: X port map(clock => CLK,
-                           clear => K,
+                           clear => K(1),
                            q_input => q_aux,
                            Z(3) => Z_aux(3),
                            Z(2) => Z_aux(2),
