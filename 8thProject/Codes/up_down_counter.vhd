@@ -1,7 +1,7 @@
 -- up down counter
 -- for more info go to github.com/mtxslv
 -- in order to work properly, please 
--- make sure equal2input4bit.vhd file is
+-- make sure equal2input4bit.vhd and ffjk.vhd files are
 -- in the folder.
 -- coded by Mateus de Assis Silva
 
