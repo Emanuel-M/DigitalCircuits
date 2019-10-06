@@ -52,4 +52,6 @@ begin
 			  P => '1',
 			  C => '1',
 			  q => q_aux);
+
+q_bloco <= q_aux;
 end bloco_ckt;
