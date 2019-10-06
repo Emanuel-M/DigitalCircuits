@@ -15,7 +15,7 @@
 entity bloco is
 	port(s: in bit_vector(2 downto 0);
 	     dd,de,i, bloco_clk: in bit;
-	     q1: out bit);
+	     q_bloco: out bit);
 end bloco;
 
 architecture bloco_ckt of bloco is
