@@ -17,8 +17,8 @@ end register_custom;
 
 architecture register_custom_ckt of register_custom is 
 
-	saida_aux: bit_vector(3 downto 0);
-	shift_aux: bit_vector(2 downto 0);
+	signal saida_aux: bit_vector(3 downto 0);
+	signal shift_aux: bit_vector(2 downto 0);
 
 	component bloco is
 		port(s: in bit_vector(2 downto 0);
