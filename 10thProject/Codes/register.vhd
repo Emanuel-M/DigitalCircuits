@@ -33,7 +33,7 @@ shift_aux(1) <=( NOT(kp) AND NOT(ld) AND NOT(shr) AND shl )OR( NOT(kp) AND NOT(l
 shift_aux(0) <= ( NOT(kp) AND NOT(ld) AND NOT(shr) AND NOT(shl) AND set )OR( NOT(kp) AND NOT(ld) AND shr) OR kp; 
 
 
-bloco0: bloco port map (dd => shl_in,
+bloco0: bloco port map (dd => shr_in,
 			de => saida_aux(1),
 			i => I(0),
 			bloco_clk => clk,
@@ -61,7 +61,7 @@ bloco2: bloco port map (dd => saida_aux(1),
 			q_bloco => saida_aux(2));
 
 bloco3: bloco port map (dd => saida_aux(2),
-			de => shr_in,
+			de => shl_in,
 			i => I(3),
 			bloco_clk => clk,
 			s(2) => shift_aux(2),
