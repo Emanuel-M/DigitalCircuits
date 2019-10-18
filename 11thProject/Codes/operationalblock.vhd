@@ -1,5 +1,6 @@
 -- Operacional Block
 -- To work correctly, make sure the following files are in the current project folder:  tot.vhd,  bytelesscomparator.vhd, eightbitsummer.vhd .
+-- While tot<S, me = 1
 -- code by mtxslv
 -- for more info about the project, go to github.com/mtxslv
 
