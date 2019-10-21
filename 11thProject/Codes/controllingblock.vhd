@@ -10,7 +10,7 @@
 -- code by mtxslv
 
 entity controllingblock is
-  port(c, tot_lt_s, clk: in bit;
+  port(c, tot_lt_s, clk, aux_clr: in bit;
         d, tot_ld, tot_clr: out bit);
 end controllingblock;    
 
@@ -26,20 +26,24 @@ architecture controllingblock_ckt of controllingblock is
 
 begin
   
-  n1 <= (NOT(s1) AND tot_lt_s AND NOT(s0)) OR (NOT(s1) AND c AND s0);
+  n1 <= (NOT(s1) AND NOT(tot_lt_s) AND s0) OR (NOT(s1) AND c AND s0);
   n0 <= (NOT(s1) AND NOT(c)) OR ( NOT(s0));
+
   
   ffd1: ffd port map(clk => clk,
                      D => n1,
                      P => '1',
-                     C => '1',
+                     C => aux_clr,
                      q => s1);
                      
   ffd0: ffd port map(clk => clk,
                      D => n0,
                      P => '1',
-                     C => '1',
+                     C => aux_clr,
                      q => s0);
                      
+  d <= s1 AND s0;
+  tot_ld <= s1 AND NOT(s0);
+  tot_clr  <= NOT(s1) AND NOT(s0);                   
     
 end controllingblock_ckt;    
