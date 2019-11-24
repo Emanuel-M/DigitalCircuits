@@ -1,0 +1,41 @@
+ATV1 - Códigos pra testar o funcionamento do VHD, nada especial
+
+ATV3 -
+	*módulo que mapeia A em S, de forma a construir o conversor Bin-Bcd: sub_module.vhd
+	*diagrama de linhas que mapeia SW(1 byte) em bcd(12 bits). Precisa do sub_module.vhd pra funcionar: converter.vhd
+
+ATV4 - 
+	*Somador completo de dois bits: summer.vhd
+
+ATV5 -
+	*Somador completo de dois bits: 2bitsummer.vhd
+	*Multiplexador de dois bits: MUX2bits.vhd
+	*Componente que tira o valor absoluto de um número de 7 bits: absComponent.vhd
+	*módulo que mapeia A em S, de forma a construir o conversor Bin-Bcd: sub_module.vhd
+	*diagrama de linhas que mapeia SW(1 byte) em bcd(12 bits). Precisa do sub_module.vhd pra funcionar: converter.vhd
+ 	*elemento que inverte o valor lógico de um vetor de 7 bits: inversor.vhd
+	*Multiplexador de dois sinais de 7 bits cada: sevenbitMUX.vhd
+	*Somador de dois sinais de 7 bits cada: sevenbitsummer.vhd
+
+ATV6 -
+	*flipflop d: ffd.vhd
+	*flipflop jk: ffjk.vhd
+
+ATV 8 -
+	*Comparador de dois bits: equal2input.vhd
+	*Comparador de igualdade de duas entradas (1 nibble cada): equal2input4bit.vhd
+	*Tem um contador entre intervalos aqui
+
+ATV 10 -
+	*Multiplexador que recebe 1 byte e escolhe qual bit vai pra saída: MUX8bits.vhd
+	*registrador de 1 bit que suporta carga paralela, deslocamento bidirecional, set e clear síncronos: bloco.vhd
+	*flipflop d: ffd.vhd
+	*registrador de 3 bits que suporta carga paralela, deslocamento bidirecional, set e clear síncronos: register.vhd
+	
+ATV 11 -
+	* Comparador completo de dois sinais de 1 bit cada: 2bitcomparator.vhd
+	* somador de dois bits: 2bitsummer.vhd
+	* multiplexador de dois bits: MUX2bits.vhd
+	* registrador de 1 bit que suporta clear, load e load: bloco.vhd  
+	* comparação se A<B (A,B com 1 byte cada): bytelesscomparator.vhd
+  	* outros elementos na pasta, relativos ao projeto da máquina de refri.
